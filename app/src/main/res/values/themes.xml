@@ -1,8 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HolidayReminders" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="themeName">light</item>
+        <!-- App -->
+        <item name="colorPrimaryDark">@color/smoke_white</item>
+        <item name="android:windowBackground">@color/smoke_white</item>
+        <item name="android:navigationBarColor">@color/brick_red</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Navigation Bar -->
+        <item name="indicatorColor">@color/smoke_white</item>
+        <item name="iconTint">@color/black_brown</item>
+        <item name="iconTintActive">@color/black_brown</item>
+        <item name="textColor">@color/black_brown</item>
+
+        <!-- Font -->
+        <item name="fontFamily">@font/jetbrains_mono_medium</item>
     </style>
 
     <style name="Theme.HolidayReminders" parent="Base.Theme.HolidayReminders" />

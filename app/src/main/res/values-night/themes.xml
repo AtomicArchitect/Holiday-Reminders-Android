@@ -1,7 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <attr name="themeName" format="string" tools:ignore="MissingDefaultResource" />
     <style name="Base.Theme.HolidayReminders" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="themeName">dark</item>
+        <!-- App -->
+        <item name="colorPrimaryDark">@color/black_brown</item>
+        <item name="android:windowBackground">@color/black_brown</item>
+        <item name="android:navigationBarColor">@color/brick_red</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation Bar -->
+        <item name="indicatorColor">@color/black_brown</item>
+        <item name="iconTint">@color/smoke_white</item>
+        <item name="iconTintActive">@color/smoke_white</item>
+        <item name="textColor">@color/smoke_white</item>
+
+        <!-- Font -->
+        <item name="fontFamily">@font/jetbrains_mono_medium</item>
     </style>
 </resources>

@@ -1,9 +1,13 @@
 package com.nsight.holidayreminders;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
@@ -13,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SmoothBottomBar smoothBottomBar;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

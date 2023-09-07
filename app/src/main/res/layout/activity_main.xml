@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#EEEEEE">
+    android:background="@drawable/main_activity_background"
+    tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNavigation"/>
+        android:layout_above="@+id/bottomNavigation">
+
+    </FrameLayout>
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomNavigation"
@@ -19,7 +21,8 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu"
-        app:backgroundColor="#8800FF"
+        app:backgroundColor="@color/navigation_bar_background"
+        app:cornerRadius="20dp"
         app:indicatorRadius="15dp"
         />
 
