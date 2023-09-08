@@ -3,50 +3,56 @@ package com.nsight.holidayreminders;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import java.util.Date;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SmoothBottomBar smoothBottomBar;
+    protected final Fragment fragmentHome = new HomeFragment();
+    protected final Fragment fragmentEdit = new EditFragment();
+    protected final Fragment fragmentSettings = new SettingsFragment();
+    protected final FragmentManager fragmentManager = getSupportFragmentManager();
+    protected Fragment activeFragment = fragmentHome;
 
-    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new HomeFragment());
-        fragmentTransaction.commit();
+        fragmentManager.beginTransaction().add(R.id.frameLayout, fragmentSettings, "settings").hide(fragmentSettings).commit();
+        fragmentManager.beginTransaction().add(R.id.frameLayout, fragmentEdit, "edit").hide(fragmentEdit).commit();
+        fragmentManager.beginTransaction().add(R.id.frameLayout, fragmentHome, "home").commit();
 
-        smoothBottomBar = findViewById(R.id.bottomNavigation);
+        SmoothBottomBar smoothBottomBar = findViewById(R.id.bottomNavigation);
         smoothBottomBar.setOnItemSelectedListener((OnItemSelectedListener) i -> {
-            FragmentManager fm = getSupportFragmentManager(); // При использовании внешних переменных крашится
-            FragmentTransaction ft = fm.beginTransaction();
             switch (i) {
                 case 0:
-                    ft.replace(R.id.frameLayout, new HomeFragment());
-                    ft.commit();
+                    fragmentManager.beginTransaction().hide(activeFragment).show(fragmentHome).commit();
+                    activeFragment = fragmentHome;
                     break;
                 case 1:
-                    ft.replace(R.id.frameLayout, new EditFragment());
-                    ft.commit();
+                    fragmentManager.beginTransaction().hide(activeFragment).show(fragmentEdit).commit();
+                    activeFragment = fragmentEdit;
                     break;
                 case 2:
-                    ft.replace(R.id.frameLayout, new SettingsFragment());
-                    ft.commit();
+                    fragmentManager.beginTransaction().hide(activeFragment).show(fragmentSettings).commit();
+                    activeFragment = fragmentSettings;
                     break;
             }
             return false;
         });
     }
+
 }

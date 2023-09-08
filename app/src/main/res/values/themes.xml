@@ -15,7 +15,7 @@
         <item name="textColor">@color/black_brown</item>
 
         <!-- Font -->
-        <item name="fontFamily">@font/jetbrains_mono_medium</item>
+        <item name="fontFamily">@font/jetbrains_mono_bold</item>
     </style>
 
     <style name="Theme.HolidayReminders" parent="Base.Theme.HolidayReminders" />

@@ -16,6 +16,6 @@
         <item name="textColor">@color/smoke_white</item>
 
         <!-- Font -->
-        <item name="fontFamily">@font/jetbrains_mono_medium</item>
+        <item name="fontFamily">@font/jetbrains_mono_bold</item>
     </style>
 </resources>
