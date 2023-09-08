@@ -5,13 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Настройки"
-        android:textSize="34dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Настройки"
+            android:textSize="34dp" />
+
+        <Button
+            android:id="@+id/button_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="65dp"
+            android:textSize="34dp"
+            android:text="Тема" />
+
+
+    </RelativeLayout>
 
 </FrameLayout>
