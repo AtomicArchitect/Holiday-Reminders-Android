@@ -16,17 +16,24 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="Настройки"
-            android:textSize="34dp" />
+            android:textSize="30dp" />
 
-        <Button
-            android:id="@+id/button_theme"
+        <TextView
+            android:id="@+id/tv_theme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="65dp"
-            android:textSize="34dp"
-            android:text="Тема" />
+            android:layout_marginTop="60dp"
+            android:textSize="30dp"
+            android:text="Тема: темная  " />
+
+        <ToggleButton
+            android:id="@+id/button_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_toRightOf="@+id/tv_theme" />
 
 
     </RelativeLayout>

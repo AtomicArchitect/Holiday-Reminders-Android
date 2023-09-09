@@ -23,7 +23,6 @@
         app:menu="@menu/menu"
         app:backgroundColor="@color/navigation_bar_background"
         app:cornerRadius="20dp"
-        app:indicatorRadius="15dp"
-        />
+        app:indicatorRadius="15dp" />
 
 </RelativeLayout>

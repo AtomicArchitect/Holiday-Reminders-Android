@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <attr name="themeName" format="string" tools:ignore="MissingDefaultResource" />
+
     <style name="Base.Theme.HolidayReminders" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="themeName">dark</item>
         <!-- App -->
