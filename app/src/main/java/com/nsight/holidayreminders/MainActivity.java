@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.nsight.holidayreminders.ui.EditFragment;
+import com.nsight.holidayreminders.ui.HomeFragment;
+import com.nsight.holidayreminders.ui.SettingsFragment;
+
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 

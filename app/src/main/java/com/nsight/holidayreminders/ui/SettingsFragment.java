@@ -1,4 +1,4 @@
-package com.nsight.holidayreminders;
+package com.nsight.holidayreminders.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import androidx.fragment.app.Fragment;
+
+import com.nsight.holidayreminders.R;
 
 public class SettingsFragment extends Fragment {
     private SharedPreferences.Editor preferencesEditor;

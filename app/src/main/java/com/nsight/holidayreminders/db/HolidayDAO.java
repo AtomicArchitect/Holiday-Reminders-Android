@@ -1,4 +1,4 @@
-package com.nsight.holidayreminders;
+package com.nsight.holidayreminders.db;
 
 import android.content.Context;
 import android.database.Cursor;

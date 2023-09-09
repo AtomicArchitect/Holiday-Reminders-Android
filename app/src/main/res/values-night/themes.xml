@@ -1,9 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <attr name="themeName" format="string" tools:ignore="MissingDefaultResource" />
-
     <style name="Base.Theme.HolidayReminders" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="themeName">dark</item>
         <!-- App -->
         <item name="colorPrimaryDark">@color/black_brown</item>
         <item name="android:windowBackground">@color/black_brown</item>
@@ -18,5 +15,11 @@
 
         <!-- Font -->
         <item name="fontFamily">@font/jetbrains_mono_bold</item>
+    </style>
+
+    <style name="Base.Theme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/smoke_white</item>
+        <item name="android:drawableTint">@color/black_brown</item>
+        <item name="android:textColor">@color/black_brown</item>
     </style>
 </resources>

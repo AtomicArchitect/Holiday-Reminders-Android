@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.AddFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Название" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.Button"
+            app:cornerRadius="10dp"
+            android:id="@+id/set_date_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/name_et"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/date_setted_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="5dp"
+            android:textSize="30dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.Button"
+            app:cornerRadius="10dp"
+            android:id="@+id/done_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/name_et"
+            android:text="Done" />
+
+    </RelativeLayout>
+
+</FrameLayout>

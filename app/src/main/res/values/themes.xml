@@ -1,7 +1,6 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.HolidayReminders" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="themeName">light</item>
         <!-- App -->
         <item name="colorPrimaryDark">@color/smoke_white</item>
         <item name="android:windowBackground">@color/smoke_white</item>
@@ -19,4 +18,12 @@
     </style>
 
     <style name="Theme.HolidayReminders" parent="Base.Theme.HolidayReminders" />
+
+    <style name="Base.Theme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/black_brown</item>
+        <item name="android:drawableTint">@color/smoke_white</item>
+        <item name="android:textColor">@color/smoke_white</item>
+    </style>
+
+    <style name="Theme.Button" parent="Base.Theme.Button" />
 </resources>
