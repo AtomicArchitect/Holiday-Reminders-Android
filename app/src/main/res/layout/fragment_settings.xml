@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SettingsFragment">
 
     <RelativeLayout
@@ -34,6 +35,56 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
             android:layout_toRightOf="@+id/tv_theme" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_below="@id/tv_theme"
+            android:text="Основной цвет:"
+            android:textSize="30dp" />
+
+        <com.madrapps.pikolo.HSLColorPicker
+            app:hue_radius_offset="60dp"
+            android:id="@+id/hsl_color_picker"
+            app:indicator_radius="12dp"
+            app:lightness_arc_width="10dp"
+            app:saturation_arc_width="10dp"
+            app:lightness_arc_length="@integer/material_motion_duration_short_1"
+            app:saturation_arc_length="@integer/material_motion_duration_short_1"
+            app:hue_arc_width="15dp"
+            app:indicator_stroke_width="0dp"
+            android:layout_below="@id/tv_theme"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.Button"
+            android:id="@+id/save_settings_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="Save" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.Button"
+            android:id="@+id/default_settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_toLeftOf="@id/save_settings_btn"
+            android:layout_marginRight="10dp"
+            android:text="Default" />
 
 
     </RelativeLayout>

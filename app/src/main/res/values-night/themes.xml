@@ -4,7 +4,7 @@
         <!-- App -->
         <item name="colorPrimaryDark">@color/black_brown</item>
         <item name="android:windowBackground">@color/black_brown</item>
-        <item name="android:navigationBarColor">@color/brick_red</item>
+        <item name="android:navigationBarColor">@color/navigation_bar_background</item>
         <item name="android:windowLightStatusBar">false</item>
 
         <!-- Navigation Bar -->
@@ -18,6 +18,7 @@
     </style>
 
     <style name="Base.Theme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">15dp</item>
         <item name="android:backgroundTint">@color/smoke_white</item>
         <item name="android:drawableTint">@color/black_brown</item>
         <item name="android:textColor">@color/black_brown</item>

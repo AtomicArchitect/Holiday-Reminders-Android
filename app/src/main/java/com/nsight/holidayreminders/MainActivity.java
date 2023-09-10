@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         SmoothBottomBar smoothBottomBar = findViewById(R.id.bottomNavigation);
 
+        int main_color = preferences.getInt("main_color", 0);
+        if (main_color != 0) {
+            getWindow().setNavigationBarColor(main_color);
+            smoothBottomBar.setBarBackgroundColor(main_color);
+        }
+
         switch (preferences.getInt("active_fragment", 0)) {
             case 0:
                 smoothBottomBar.setItemActiveIndex(0);

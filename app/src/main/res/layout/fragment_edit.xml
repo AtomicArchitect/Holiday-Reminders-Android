@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.EditFragment">
 
     <RelativeLayout
@@ -32,7 +31,6 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Theme.Button"
-            app:cornerRadius="10dp"
             android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +43,6 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Theme.Button"
-            app:cornerRadius="10dp"
             android:id="@+id/edit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +55,6 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Theme.Button"
-            app:cornerRadius="10dp"
             android:id="@+id/delete_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
