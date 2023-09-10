@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.nsight.holidayreminders.db.HolidayDB;
 import com.nsight.holidayreminders.ui.EditFragment;
 import com.nsight.holidayreminders.ui.HomeFragment;
 import com.nsight.holidayreminders.ui.SettingsFragment;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        HolidayDB.initialize(getBaseContext());
 
         preferences = getSharedPreferences("hr_settings", MODE_PRIVATE);
         preferencesEditor = preferences.edit();
@@ -122,5 +124,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         fragmentManager.beginTransaction().show(getFragmentOnId(activeFragment)).commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        HolidayDB.clean();
     }
 }

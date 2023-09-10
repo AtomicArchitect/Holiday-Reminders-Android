@@ -9,17 +9,16 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.nsight.holidayreminders.db.HolidayDAO;
 import com.nsight.holidayreminders.R;
+import com.nsight.holidayreminders.db.HolidayDB;
 
 import java.util.Date;
 
 public class HomeFragment extends Fragment {
 
-    private static final SimpleDateFormat finalDateFormat = new SimpleDateFormat("dd.MM.y");
+    private static final SimpleDateFormat finalDateFormat = new SimpleDateFormat("dd.MM");
     private TextView currentDate;
     private TextView todayHoliday;
-    private HolidayDAO holidayDAO;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,8 +34,7 @@ public class HomeFragment extends Fragment {
         currentDate.setText(date);
 
         todayHoliday = (TextView) view.findViewById(R.id.today_holiday);
-        holidayDAO = new HolidayDAO(getActivity().getBaseContext());
-        todayHoliday.setText(holidayDAO.isHoliday(date));
+        todayHoliday.setText(HolidayDB.isHoliday(date));
 
         return view;
     }

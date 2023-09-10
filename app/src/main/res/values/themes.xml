@@ -6,6 +6,7 @@
         <item name="android:windowBackground">@color/smoke_white</item>
         <item name="android:navigationBarColor">@color/navigation_bar_background</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="divider">@color/smoke_white</item>
 
         <!-- Navigation Bar -->
         <item name="indicatorColor">@color/smoke_white</item>

@@ -6,6 +6,7 @@
         <item name="android:windowBackground">@color/black_brown</item>
         <item name="android:navigationBarColor">@color/navigation_bar_background</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="divider">@color/black_brown</item>
 
         <!-- Navigation Bar -->
         <item name="indicatorColor">@color/black_brown</item>

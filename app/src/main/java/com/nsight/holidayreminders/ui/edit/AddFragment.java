@@ -1,4 +1,4 @@
-package com.nsight.holidayreminders.ui;
+package com.nsight.holidayreminders.ui.edit;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -7,17 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.nsight.holidayreminders.R;
+import com.nsight.holidayreminders.db.HolidayDB;
 
 import java.util.Calendar;
 
 public class AddFragment extends Fragment {
     private final Calendar date = Calendar.getInstance();
     private TextView dateSettedTextView;
+    private EditText nameEditText;
 
     private DatePickerDialog.OnDateSetListener d;
 
@@ -33,6 +36,7 @@ public class AddFragment extends Fragment {
         dateSettedTextView = view.findViewById(R.id.date_setted_tv);
         Button dateSetButton = view.findViewById(R.id.set_date_btn);
         Button doneButton = view.findViewById(R.id.done_add_btn);
+        nameEditText = view.findViewById(R.id.name_et);
 
         d = (datePicker, i, i1, i2) -> {
             date.set(Calendar.YEAR, i);
@@ -49,6 +53,9 @@ public class AddFragment extends Fragment {
                     date.get(Calendar.DAY_OF_MONTH))
                     .show();
         });
+
+        doneButton.setOnClickListener(view12 ->
+                HolidayDB.save(String.valueOf(nameEditText.getText()), String.valueOf(dateSettedTextView.getText())));
 
         return view;
     }
