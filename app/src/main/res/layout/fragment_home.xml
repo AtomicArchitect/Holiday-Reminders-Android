@@ -38,6 +38,20 @@
             android:text="Пусто 😔"
             android:textSize="34dp" />
 
+        <ListView
+            android:id="@+id/holidays_list_view"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/today_holiday"
+            android:scrollbars="none"
+            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp" />
+
     </RelativeLayout>
 
 </FrameLayout>
