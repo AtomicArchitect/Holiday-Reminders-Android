@@ -28,4 +28,10 @@
     </style>
 
     <style name="Theme.Button" parent="Base.Theme.Button" />
+
+    <style name="Base.Theme.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_brown</item>
+    </style>
+
+    <style name="Theme.TextView" parent="Base.Theme.TextView" />
 </resources>

@@ -4,18 +4,23 @@
     android:layout_height="wrap_content">
 
     <TextView
+        style="@style/Theme.TextView"
         android:id="@+id/date_item_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textColor="@color/smoke_white"
+        android:layout_marginLeft="20dp"
+        android:textSize="25dp"
         android:gravity="center" />
 
     <TextView
+        style="@style/Theme.TextView"
         android:id="@+id/name_item_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/smoke_white"
         android:layout_toRightOf="@+id/date_item_text_view"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:textSize="20dp"
         android:gravity="center" />
 

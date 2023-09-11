@@ -7,6 +7,7 @@
 
     <ListView
         android:id="@+id/delete_list_view"
+        tools:listitem="@layout/home_row"
         android:divider="@null"
         android:dividerHeight="0dp"
         android:layout_width="match_parent"

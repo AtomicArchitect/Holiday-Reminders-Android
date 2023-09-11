@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            style="@style/Theme.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -19,6 +20,7 @@
             android:textSize="34dp" />
 
         <TextView
+            style="@style/Theme.TextView"
             android:id="@+id/current_date_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,6 +31,7 @@
             android:textSize="34dp" />
 
         <TextView
+            style="@style/Theme.TextView"
             android:id="@+id/today_holiday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +43,7 @@
 
         <ListView
             android:id="@+id/holidays_list_view"
+            tools:listitem="@layout/home_row"
             android:divider="@null"
             android:dividerHeight="0dp"
             android:layout_width="match_parent"
