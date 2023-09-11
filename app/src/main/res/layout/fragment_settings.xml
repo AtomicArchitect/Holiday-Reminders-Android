@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="Настройки"
@@ -26,7 +26,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="60dp"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:text="Тема: темная  " />
 
         <ToggleButton
@@ -43,7 +43,7 @@
             android:layout_marginStart="20dp"
             android:layout_below="@id/tv_theme"
             android:text="Основной цвет:"
-            android:textSize="30dp" />
+            android:textSize="25dp" />
 
         <com.madrapps.pikolo.HSLColorPicker
             app:hue_radius_offset="60dp"

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,7 +15,6 @@ import com.nsight.holidayreminders.R;
 import com.nsight.holidayreminders.db.DBAdapter;
 import com.nsight.holidayreminders.ui.edit.HolidayAdapter;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class HomeFragment extends Fragment {

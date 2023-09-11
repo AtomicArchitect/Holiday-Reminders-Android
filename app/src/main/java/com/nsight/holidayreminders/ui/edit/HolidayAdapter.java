@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.nsight.holidayreminders.R;
 import com.nsight.holidayreminders.db.Holiday;
+import com.nsight.holidayreminders.utils.DateUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,17 +46,21 @@ public class HolidayAdapter extends ArrayAdapter<Holiday> {
 
         viewHolder.nameView.setText(holiday.getName());
         viewHolder.dateView.setText(holiday.getDate());
+        int days = DateUtils.dateDiffDaysFromToday(holiday.getDate());
+        String daysResult = days > 0 ? "Через " + days + " " + DateUtils.getDayAddition(days) : "Сегодня";
+        viewHolder.whenView.setText(daysResult);
 
         return convertView;
     }
 
     private class ViewHolder {
 
-        final TextView nameView, dateView;
+        final TextView nameView, dateView, whenView;
 
         ViewHolder(View view) {
             nameView = view.findViewById(R.id.name_item_text_view);
             dateView = view.findViewById(R.id.date_item_text_view);
+            whenView = view.findViewById(R.id.when_date_item_text_view);
         }
     }
 }
