@@ -54,7 +54,31 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="70dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.Button"
+            android:id="@+id/network_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:drawableRight="@drawable/baseline_internet_24"
+            android:text="Network" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Theme.Button"
+            android:id="@+id/local_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/baseline_local_24"
+            android:text="Local" />
 
     </RelativeLayout>
 
