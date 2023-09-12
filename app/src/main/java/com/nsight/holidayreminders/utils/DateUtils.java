@@ -25,7 +25,7 @@ public class DateUtils {
         end.set(Calendar.DAY_OF_MONTH, Integer.parseInt(args[0]));
         end.set(Calendar.MONTH, Integer.parseInt(args[1]) - 1);
         Calendar start = Calendar.getInstance();
-        if (start.after(end)) end.set(Calendar.YEAR, end.get(Calendar.YEAR)+1);
+        if (start.after(end)) end.set(Calendar.YEAR, end.get(Calendar.YEAR) + 1);
         long diffInMillies = Math.abs(end.getTimeInMillis() - start.getTimeInMillis());
         return (int) TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
     }

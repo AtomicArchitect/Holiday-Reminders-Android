@@ -1,16 +1,27 @@
 package com.nsight.holidayreminders;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.nsight.holidayreminders.ui.EditFragment;
 import com.nsight.holidayreminders.ui.HomeFragment;
 import com.nsight.holidayreminders.ui.SettingsFragment;
+
+import java.util.Calendar;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
@@ -24,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected int activeFragment = 0;
     private SharedPreferences preferences;
     private SharedPreferences.Editor preferencesEditor;
+    private PendingIntent alarm;
+    private AlarmManager alarmManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,5 +135,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         fragmentManager.beginTransaction().show(getFragmentOnId(activeFragment)).commit();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent(this, AlarmReceiver.class);
+        alarm = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        if (preferences.getBoolean("notifications", false)) {
+            String[] timeArray = preferences.getString("notification_time", "9:00").split(":");
+            Calendar now = Calendar.getInstance();
+            now.set(Calendar.SECOND, 0);
+            now.set(Calendar.MILLISECOND, 0);
+            Calendar targetTime = now;
+            targetTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]));
+            targetTime.set(Calendar.MINUTE, Integer.parseInt(timeArray[1]));
+            if (targetTime.before(now)) targetTime.add(Calendar.DATE, 1);
+            alarmManager.cancel(alarm);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, targetTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarm);
+        } else {
+            alarmManager.cancel(alarm);
+        }
     }
 }
