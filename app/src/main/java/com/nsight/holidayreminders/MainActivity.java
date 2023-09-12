@@ -1,19 +1,14 @@
 package com.nsight.holidayreminders;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -35,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected int activeFragment = 0;
     private SharedPreferences preferences;
     private SharedPreferences.Editor preferencesEditor;
-    private PendingIntent alarm;
-    private AlarmManager alarmManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,8 +134,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Intent intent = new Intent(this, AlarmReceiver.class);
-        alarm = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        @SuppressLint("WrongConstant")
+        PendingIntent alarm = PendingIntent.getBroadcast(this, 0, intent, Intent.FLAG_ACTIVITY_CLEAR_TASK | PendingIntent.FLAG_IMMUTABLE);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         if (preferences.getBoolean("notifications", false)) {
             String[] timeArray = preferences.getString("notification_time", "9:00").split(":");
             Calendar now = Calendar.getInstance();
